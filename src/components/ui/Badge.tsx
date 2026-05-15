@@ -10,8 +10,8 @@ export interface BadgeProps {
 }
 
 const variantStyles = {
-  default: 'bg-strawberry-100 text-strawberry-700',
-  primary: 'bg-strawberry-500 text-white',
+  default: 'bg-pink-100 text-pink-700',
+  primary: 'bg-pink-500 text-white',
   danger: 'bg-red-100 text-red-700',
   warning: 'bg-amber-100 text-amber-700',
 };

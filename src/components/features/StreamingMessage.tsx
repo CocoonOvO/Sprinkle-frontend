@@ -42,7 +42,7 @@ export const StreamingMessage: React.FC<StreamingMessageProps> = ({
 
       <div className={cn('flex flex-col gap-1 max-w-[70%]', isOwn && 'items-end')}>
         {!isOwn && (
-          <span className="text-xs text-chocolate-400 ml-1 font-medium">
+          <span className="text-xs text-slate-400 ml-1 font-medium">
             {senderName}
           </span>
         )}
@@ -51,8 +51,8 @@ export const StreamingMessage: React.FC<StreamingMessageProps> = ({
           className={cn(
             'relative px-4 py-2.5 rounded-2xl',
             isOwn
-              ? 'bg-gradient-to-br from-strawberry-400 to-strawberry-500 text-white shadow-md'
-              : 'bg-white text-chocolate-600 shadow-md'
+              ? 'bg-gradient-to-br from-pink-400 to-pink-500 text-white shadow-md'
+              : 'bg-white text-slate-600 shadow-md'
           )}
         >
           <div
@@ -61,7 +61,7 @@ export const StreamingMessage: React.FC<StreamingMessageProps> = ({
           >
             {content}
             {isStreaming && (
-              <span className="inline-block w-2 h-4 ml-1 bg-strawberry-300 animate-pulse rounded-sm" />
+              <span className="inline-block w-2 h-4 ml-1 bg-pink-300 animate-pulse rounded-sm" />
             )}
           </div>
 
@@ -81,7 +81,7 @@ export const StreamingMessage: React.FC<StreamingMessageProps> = ({
         </div>
 
         {isStreaming && (
-          <span className="text-[10px] text-chocolate-300 animate-pulse px-1">
+          <span className="text-[10px] text-slate-300 animate-pulse px-1">
             AI 正在输入...
           </span>
         )}

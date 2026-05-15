@@ -10,21 +10,21 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantStyles = {
   primary: [
-    'bg-gradient-to-br from-strawberry-400 to-strawberry-500 text-white',
+    'bg-gradient-to-br from-pink-400 to-pink-500 text-white',
     'shadow-md hover:shadow-lg',
     'hover:-translate-y-0.5 active:translate-y-0 active:shadow-sm',
     'transition-all duration-200',
   ].join(' '),
   secondary: [
-    'bg-gradient-to-br from-strawberry-50 to-strawberry-100 text-strawberry-600',
+    'bg-gradient-to-br from-pink-50 to-pink-100 text-pink-600',
     'shadow-sm hover:shadow-md',
     'hover:-translate-y-0.5 active:translate-y-0',
     'transition-all duration-200',
   ].join(' '),
   ghost: [
-    'bg-transparent text-chocolate-400',
-    'hover:bg-strawberry-50 hover:text-strawberry-500',
-    'active:bg-strawberry-100',
+    'bg-transparent text-slate-400',
+    'hover:bg-pink-50 hover:text-pink-500',
+    'active:bg-pink-100',
     'transition-all duration-200',
   ].join(' '),
   danger: [

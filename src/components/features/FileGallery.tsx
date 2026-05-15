@@ -58,7 +58,7 @@ export const FileGallery: React.FC = () => {
               className={cn(
                 'relative group aspect-square rounded-xl overflow-hidden cursor-pointer',
                 'ring-2 ring-transparent',
-                selectedFiles.has(file.id) && 'ring-strawberry-500'
+                selectedFiles.has(file.id) && 'ring-pink-500'
               )}
               onClick={() => setPreviewFile(file)}
             >
@@ -76,7 +76,7 @@ export const FileGallery: React.FC = () => {
                 className={cn(
                   'absolute top-2 left-2 w-5 h-5 rounded-md border-2 transition-all',
                   selectedFiles.has(file.id)
-                    ? 'bg-strawberry-500 border-strawberry-500'
+                    ? 'bg-pink-500 border-pink-500'
                     : 'bg-white/50 border-white opacity-0 group-hover:opacity-100'
                 )}
               >

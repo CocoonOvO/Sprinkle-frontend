@@ -8,31 +8,31 @@
 
 ### 色彩系统
 ```
-甜点系配色 - 草莓奶霜主题:
+粉蓝马卡龙配色 - Candy Macaron Theme:
 
-Primary:     #EC4899 (草莓粉 - 主按钮、强调)
-Secondary:   #FCD34D (香草奶油黄 - 辅助强调)
-Accent:      #10B981 (薄荷糖绿 - 点缀、状态)
-Background:  #FFFBF5 (暖白 - 温暖底色)
+Primary:     #FF8FAB (泡泡糖粉 - 主按钮、强调)
+Secondary:   #60A5FA (天空蓝 - 辅助强调)
+Accent:      #F472B6 (玫红色 - 高亮、hover)
+Accent2:     #3B82F6 (海洋蓝 - 链接、进度条)
+Background:  #F0F9FF (霜白 - 主背景)
 Surface:     #FFFFFF (纯白卡片)
-Border:      #E5E7EB (柔和边框)
-Text:        #4A3728 (巧克力棕 - 深色文字)
-Text-Muted:  #9A8478 (奶茶色 - 次要文字)
+Border:      #E0E7FF (薄雾蓝 - 柔和边框)
+Text:        #475569 (石板灰 - 主文字)
+Text-Muted:  #94A3B8 (烟灰色 - 次要文字)
 
 状态色彩:
-- Success:  #10B981 (薄荷绿)
-- Warning:  #F59E0B (焦糖色)
-- Error:    #EF4444 (覆盆子红)
+- Success:  #34D399 (薄荷绿)
+- Warning:  #FBBF24 (琥珀黄)
+- Error:    #F87171 (珊瑚红)
 
 消息气泡:
-- 自己:     #EC4899 (草莓粉)
-- 他人:     #F3F4F6 (浅灰)
+- 自己:     #FF8FAB → #F472B6 渐变 (粉蓝渐变)
+- 他人:     #FFFFFF (纯白)
 
 色值表 (Tailwind CSS 扩展):
-- strawberry-50~900: #EC4899 系粉色
-- vanilla-50~900: #FCD34D 系奶油黄
-- mint-50~900: #10B981 系薄荷绿
-- chocolate-50~900: #4A3728 系棕色调
+- pink-50~900: #FF8FAB 系粉色
+- blue-50~900: #60A5FA 系蓝色
+- slate-50~900: #475569 系蓝灰色
 ```
 
 ### 字体

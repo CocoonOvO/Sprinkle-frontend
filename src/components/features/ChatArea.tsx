@@ -10,9 +10,9 @@ const EmptyState: React.FC = () => {
     <div className="flex-1 flex items-center justify-center">
       <div className="text-center max-w-sm animate-float">
         <div className="w-32 h-32 mx-auto mb-6 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-strawberry-200 to-strawberry-100 rounded-full opacity-50 blur-xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-200 to-pink-100 rounded-full opacity-50 blur-xl" />
           <div className="relative w-full h-full flex items-center justify-center">
-            <svg className="w-20 h-20 text-strawberry-300" viewBox="0 0 100 100" fill="none">
+            <svg className="w-20 h-20 text-pink-300" viewBox="0 0 100 100" fill="none">
               <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" opacity="0.3" />
               <path d="M30 50 Q40 35 50 50 Q60 65 70 50" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
               <circle cx="35" cy="40" r="3" fill="currentColor" opacity="0.4" />
@@ -23,12 +23,12 @@ const EmptyState: React.FC = () => {
             </svg>
           </div>
         </div>
-        <h3 className="text-lg font-semibold text-chocolate-500 mb-2">开始聊天吧</h3>
-        <p className="text-sm text-chocolate-300">从侧边栏选择一个会话，开启甜蜜的对话之旅</p>
+        <h3 className="text-lg font-semibold text-slate-500 mb-2">开始聊天吧</h3>
+        <p className="text-sm text-slate-300">从侧边栏选择一个会话，开启甜蜜的对话之旅</p>
         <div className="flex justify-center gap-2 mt-4">
-          <div className="w-2 h-2 rounded-full bg-strawberry-300 animate-pulse-soft" />
-          <div className="w-2 h-2 rounded-full bg-strawberry-400 animate-pulse-soft stagger-1" />
-          <div className="w-2 h-2 rounded-full bg-strawberry-500 animate-pulse-soft stagger-2" />
+          <div className="w-2 h-2 rounded-full bg-pink-300 animate-pulse-soft" />
+          <div className="w-2 h-2 rounded-full bg-pink-400 animate-pulse-soft stagger-1" />
+          <div className="w-2 h-2 rounded-full bg-pink-500 animate-pulse-soft stagger-2" />
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@ export const ChatArea: React.FC = () => {
   if (!currentConversation) {
     return (
       <div className="flex-1 flex flex-col relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-cream-50/50 to-cream-100/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50-50/50 to-blue-50-100/30" />
         <EmptyState />
       </div>
     );
@@ -71,28 +71,28 @@ export const ChatArea: React.FC = () => {
 
   return (
     <div className="flex-1 flex flex-col relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-strawberry-50/20 via-transparent to-cream-50/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-pink-50/20 via-transparent to-blue-50-50/30" />
 
-      <div className="relative z-10 h-14 bg-white/80 backdrop-blur-md border-b border-strawberry-100/50 flex items-center justify-between px-4 shadow-sm">
+      <div className="relative z-10 h-14 bg-white/80 backdrop-blur-md border-b border-pink-100/50 flex items-center justify-between px-4 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-strawberry-100 to-strawberry-50 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-100 to-pink-50 flex items-center justify-center">
             {isGroup ? (
-              <UsersIcon className="w-4 h-4 text-strawberry-500" />
+              <UsersIcon className="w-4 h-4 text-pink-500" />
             ) : (
-              <div className="w-4 h-4 rounded-full bg-gradient-to-br from-strawberry-300 to-strawberry-400" />
+              <div className="w-4 h-4 rounded-full bg-gradient-to-br from-pink-300 to-pink-400" />
             )}
           </div>
-          <h2 className="font-semibold text-chocolate-600">
+          <h2 className="font-semibold text-slate-600">
             {currentConversation.metadata?.name || currentConversation.name || '私聊'}
           </h2>
           {isGroup && (
-            <span className="flex items-center gap-1 text-xs text-chocolate-400 bg-strawberry-50 px-2 py-0.5 rounded-full">
+            <span className="flex items-center gap-1 text-xs text-slate-400 bg-pink-50 px-2 py-0.5 rounded-full">
               <UsersIcon className="w-3 h-3" />
               {currentConversation.member_count}
             </span>
           )}
         </div>
-        <Button variant="ghost" size="sm" onClick={toggleDetailPanel} className="hover:bg-strawberry-50 hover:text-strawberry-500 transition-colors">
+        <Button variant="ghost" size="sm" onClick={toggleDetailPanel} className="hover:bg-pink-50 hover:text-pink-500 transition-colors">
           <Settings className="w-4 h-4" />
         </Button>
       </div>

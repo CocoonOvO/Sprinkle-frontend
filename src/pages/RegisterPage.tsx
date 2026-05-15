@@ -7,7 +7,7 @@ import { Input } from '../components/ui/Input';
 const SprinkleBackground: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-vanilla-50/50 via-cream-100 to-strawberry-50/30" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/50 via-blue-50-100 to-pink-50/30" />
       <div className="sprinkle-particle sprinkle-particle-1" style={{ left: '8%', animationDelay: '0.3s' }} />
       <div className="sprinkle-particle sprinkle-particle-4" style={{ left: '18%', animationDelay: '1.3s' }} />
       <div className="sprinkle-particle sprinkle-particle-2" style={{ left: '30%', animationDelay: '0.8s' }} />
@@ -15,8 +15,8 @@ const SprinkleBackground: React.FC = () => {
       <div className="sprinkle-particle sprinkle-particle-3" style={{ left: '60%', animationDelay: '1.8s' }} />
       <div className="sprinkle-particle sprinkle-particle-1" style={{ left: '75%', animationDelay: '3.3s' }} />
       <div className="sprinkle-particle sprinkle-particle-4" style={{ left: '85%', animationDelay: '2.8s' }} />
-      <div className="absolute top-20 -left-20 w-72 h-72 bg-gradient-to-br from-vanilla-200/30 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-20 -right-20 w-80 h-80 bg-gradient-to-tl from-strawberry-200/30 to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-20 -left-20 w-72 h-72 bg-gradient-to-br from-blue-200/30 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-20 -right-20 w-80 h-80 bg-gradient-to-tl from-pink-200/30 to-transparent rounded-full blur-3xl" />
     </div>
   );
 };
@@ -72,11 +72,11 @@ export const RegisterPage: React.FC = () => {
       <div className="relative z-10 w-full max-w-md">
         <div className="card-sprinkle rounded-3xl p-8 animate-slide-in">
           <div className="flex flex-col items-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-strawberry-400 to-strawberry-500 flex items-center justify-center mb-4 shadow-lg hover-lift" style={{ boxShadow: '0 8px 24px rgba(236, 72, 153, 0.4)' }}>
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-500 flex items-center justify-center mb-4 shadow-lg hover-lift" style={{ boxShadow: '0 8px 24px rgba(236, 72, 153, 0.4)' }}>
               <span className="text-white font-bold text-2xl">S</span>
             </div>
-            <h1 className="text-2xl font-bold text-chocolate-600">创建账户</h1>
-            <p className="text-chocolate-400 mt-1">加入 Sprinkle 开始聊天</p>
+            <h1 className="text-2xl font-bold text-slate-600">创建账户</h1>
+            <p className="text-slate-400 mt-1">加入 Sprinkle 开始聊天</p>
           </div>
 
           {displayError && (
@@ -87,7 +87,7 @@ export const RegisterPage: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-chocolate-500 mb-1.5">用户名</label>
+              <label className="block text-sm font-medium text-slate-500 mb-1.5">用户名</label>
               <Input
                 name="username"
                 placeholder="选择用户名"
@@ -98,7 +98,7 @@ export const RegisterPage: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-chocolate-500 mb-1.5">显示名称</label>
+              <label className="block text-sm font-medium text-slate-500 mb-1.5">显示名称</label>
               <Input
                 name="display_name"
                 placeholder="输入显示名称"
@@ -109,7 +109,7 @@ export const RegisterPage: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-chocolate-500 mb-1.5">密码</label>
+              <label className="block text-sm font-medium text-slate-500 mb-1.5">密码</label>
               <Input
                 name="password"
                 type="password"
@@ -121,7 +121,7 @@ export const RegisterPage: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-chocolate-500 mb-1.5">确认密码</label>
+              <label className="block text-sm font-medium text-slate-500 mb-1.5">确认密码</label>
               <Input
                 name="confirmPassword"
                 type="password"
@@ -137,9 +137,9 @@ export const RegisterPage: React.FC = () => {
             </Button>
           </form>
 
-          <p className="text-center text-sm text-chocolate-400 mt-6">
+          <p className="text-center text-sm text-slate-400 mt-6">
             已有账户？{' '}
-            <Link to="/login" className="text-strawberry-500 hover:text-strawberry-600 font-semibold transition-colors">
+            <Link to="/login" className="text-pink-500 hover:text-pink-600 font-semibold transition-colors">
               返回登录
             </Link>
           </p>

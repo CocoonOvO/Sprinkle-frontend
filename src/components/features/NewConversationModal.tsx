@@ -44,14 +44,14 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
   const otherUsers = TEST_USERS.filter(u => u.id !== currentUser?.id);
 
   return (
-    <div className="fixed inset-0 z-50 bg-gradient-to-br from-stone-100 via-strawberry-50/30 to-stone-100 p-4">
+    <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-100 via-pink-50/30 to-slate-100 p-4">
       <div className="absolute inset-0 backdrop-blur-sm" onClick={onClose} />
       <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl w-[400px] overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-stone-100">
-          <h3 className="font-semibold text-lg text-chocolate-700">新建会话</h3>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+          <h3 className="font-semibold text-lg text-slate-700">新建会话</h3>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl hover:bg-stone-100 text-chocolate-400 hover:text-chocolate-600 transition-colors"
+            className="p-2 rounded-xl hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -64,8 +64,8 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
               className={cn(
                 'flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border-2 transition-all',
                 conversationType === 'group'
-                  ? 'border-strawberry-400 bg-strawberry-50 text-strawberry-600'
-                  : 'border-stone-200 text-chocolate-500 hover:border-stone-300'
+                  ? 'border-pink-400 bg-pink-50 text-pink-600'
+                  : 'border-slate-200 text-slate-500 hover:border-slate-300'
               )}
             >
               <Users className="w-5 h-5" />
@@ -76,8 +76,8 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
               className={cn(
                 'flex-1 flex items-center justify-center gap-2 py-3 rounded-xl border-2 transition-all',
                 conversationType === 'direct'
-                  ? 'border-strawberry-400 bg-strawberry-50 text-strawberry-600'
-                  : 'border-stone-200 text-chocolate-500 hover:border-stone-300'
+                  ? 'border-pink-400 bg-pink-50 text-pink-600'
+                  : 'border-slate-200 text-slate-500 hover:border-slate-300'
               )}
             >
               <User className="w-5 h-5" />
@@ -87,40 +87,40 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
 
           {conversationType === 'group' ? (
             <div className="space-y-3">
-              <label className="text-sm font-medium text-chocolate-600">群聊名称</label>
+              <label className="text-sm font-medium text-slate-600">群聊名称</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="输入群聊名称"
                 className={cn(
-                  'w-full h-11 px-4 rounded-xl border border-stone-200',
-                  'text-chocolate-700 placeholder:text-chocolate-300',
-                  'focus:outline-none focus:border-strawberry-300 focus:shadow-[0_0_0_3px_rgba(236,72,153,0.1)]',
-                  'hover:border-stone-300 transition-all'
+                  'w-full h-11 px-4 rounded-xl border border-slate-200',
+                  'text-slate-700 placeholder:text-slate-300',
+                  'focus:outline-none focus:border-pink-300 focus:shadow-[0_0_0_3px_rgba(236,72,153,0.1)]',
+                  'hover:border-slate-300 transition-all'
                 )}
               />
             </div>
           ) : (
             <div className="space-y-3">
-              <label className="text-sm font-medium text-chocolate-600">选择用户</label>
-              <div className="max-h-48 overflow-y-auto border border-stone-200 rounded-xl">
+              <label className="text-sm font-medium text-slate-600">选择用户</label>
+              <div className="max-h-48 overflow-y-auto border border-slate-200 rounded-xl">
                 {otherUsers.map(user => (
                   <button
                     key={user.id}
                     onClick={() => setSelectedUser(user)}
                     className={cn(
-                      'w-full flex items-center gap-3 px-3 py-2 hover:bg-strawberry-50 transition-colors',
-                      selectedUser?.id === user.id && 'bg-strawberry-50'
+                      'w-full flex items-center gap-3 px-3 py-2 hover:bg-pink-50 transition-colors',
+                      selectedUser?.id === user.id && 'bg-pink-50'
                     )}
                   >
                     <Avatar name={user.display_name} size="sm" />
                     <div className="flex-1 text-left">
-                      <p className="text-sm font-medium text-chocolate-700">{user.display_name}</p>
-                      <p className="text-xs text-chocolate-400">@{user.username}</p>
+                      <p className="text-sm font-medium text-slate-700">{user.display_name}</p>
+                      <p className="text-xs text-slate-400">@{user.username}</p>
                     </div>
                     {selectedUser?.id === user.id && (
-                      <Check className="w-4 h-4 text-strawberry-500" />
+                      <Check className="w-4 h-4 text-pink-500" />
                     )}
                   </button>
                 ))}
@@ -129,17 +129,17 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
           )}
         </div>
 
-        <div className="flex gap-3 p-6 border-t border-stone-100 bg-stone-50">
+        <div className="flex gap-3 p-6 border-t border-slate-100 bg-slate-50">
           <button
             onClick={onClose}
-            className="flex-1 h-11 rounded-xl border border-stone-200 text-chocolate-500 font-medium hover:bg-white transition-colors"
+            className="flex-1 h-11 rounded-xl border border-slate-200 text-slate-500 font-medium hover:bg-white transition-colors"
           >
             取消
           </button>
           <button
             onClick={handleCreate}
             disabled={isCreating || (conversationType === 'group' && !name.trim()) || (conversationType === 'direct' && !selectedUser)}
-            className="flex-1 h-11 rounded-xl bg-gradient-to-r from-strawberry-400 to-strawberry-500 text-white font-medium hover:from-strawberry-500 hover:to-strawberry-600 transition-all disabled:opacity-50 shadow-md hover-lift"
+            className="flex-1 h-11 rounded-xl bg-gradient-to-r from-pink-400 to-pink-500 text-white font-medium hover:from-pink-500 hover:to-pink-600 transition-all disabled:opacity-50 shadow-md hover-lift"
           >
             {isCreating ? '创建中...' : '创建'}
           </button>

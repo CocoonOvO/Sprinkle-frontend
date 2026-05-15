@@ -69,14 +69,14 @@ export const ProfileModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-gradient-to-br from-stone-100 via-strawberry-50/30 to-stone-100">
+    <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-100 via-pink-50/30 to-slate-100">
       <div className="absolute inset-0 backdrop-blur-sm" onClick={handleClose} />
       <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl flex flex-col animate-scale-in w-[480px] max-h-[calc(100vh-80px)] overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-stone-100">
-          <h3 className="font-semibold text-lg text-chocolate-700">编辑个人资料</h3>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+          <h3 className="font-semibold text-lg text-slate-700">编辑个人资料</h3>
           <button
             onClick={handleClose}
-            className="p-2 rounded-xl hover:bg-stone-100 text-chocolate-400 hover:text-chocolate-600 transition-colors"
+            className="p-2 rounded-xl hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -112,7 +112,7 @@ export const ProfileModal: React.FC = () => {
               {user?.avatar && (
                 <button
                   onClick={handleRemoveAvatar}
-                  className="text-sm text-chocolate-400 hover:text-red-500 transition-colors"
+                  className="text-sm text-slate-400 hover:text-red-500 transition-colors"
                 >
                   移除头像
                 </button>
@@ -123,7 +123,7 @@ export const ProfileModal: React.FC = () => {
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="text-sm font-medium text-chocolate-500 flex items-center gap-1.5">
+                <label className="text-sm font-medium text-slate-500 flex items-center gap-1.5">
                   <User className="w-4 h-4" />
                   显示名称
                 </label>
@@ -133,48 +133,48 @@ export const ProfileModal: React.FC = () => {
                   onChange={(e) => setDisplayName(e.target.value)}
                   placeholder="输入显示名称"
                   className={cn(
-                    'w-full h-11 px-4 rounded-xl border border-stone-200',
-                    'text-chocolate-700 placeholder:text-chocolate-300',
-                    'focus:outline-none focus:border-strawberry-300 focus:shadow-[0_0_0_3px_rgba(236,72,153,0.1)]',
-                    'hover:border-stone-300 transition-all'
+                    'w-full h-11 px-4 rounded-xl border border-slate-200',
+                    'text-slate-700 placeholder:text-slate-300',
+                    'focus:outline-none focus:border-pink-300 focus:shadow-[0_0_0_3px_rgba(236,72,153,0.1)]',
+                    'hover:border-slate-300 transition-all'
                   )}
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-sm font-medium text-chocolate-500 flex items-center gap-1.5">
+                <label className="text-sm font-medium text-slate-500 flex items-center gap-1.5">
                   <Mail className="w-4 h-4" />
                   用户名
                 </label>
-                <div className="w-full h-11 px-4 rounded-xl border border-stone-100 bg-stone-50 flex items-center">
-                  <span className="text-chocolate-400">@{user?.username}</span>
+                <div className="w-full h-11 px-4 rounded-xl border border-slate-100 bg-slate-50 flex items-center">
+                  <span className="text-slate-400">@{user?.username}</span>
                 </div>
               </div>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-medium text-chocolate-500 flex items-center gap-1.5">
+              <label className="text-sm font-medium text-slate-500 flex items-center gap-1.5">
                 <Shield className="w-4 h-4" />
                 用户类型
               </label>
-              <div className="w-full h-11 px-4 rounded-xl border border-stone-100 bg-stone-50 flex items-center">
-                <span className="text-chocolate-400 capitalize">{user?.user_type || 'user'}</span>
+              <div className="w-full h-11 px-4 rounded-xl border border-slate-100 bg-slate-50 flex items-center">
+                <span className="text-slate-400 capitalize">{user?.user_type || 'user'}</span>
               </div>
             </div>
 
             <div className="space-y-3">
-              <label className="text-sm font-medium text-chocolate-500 flex items-center gap-1.5">
+              <label className="text-sm font-medium text-slate-500 flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />
                 附加信息
               </label>
-              <div className="p-4 bg-stone-50 rounded-xl space-y-3">
+              <div className="p-4 bg-slate-50 rounded-xl space-y-3">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-chocolate-400 w-16">ID:</span>
-                  <span className="text-sm text-chocolate-600 font-mono">{user?.id}</span>
+                  <span className="text-xs text-slate-400 w-16">ID:</span>
+                  <span className="text-sm text-slate-600 font-mono">{user?.id}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-chocolate-400 w-16">创建:</span>
-                  <span className="text-sm text-chocolate-600">
+                  <span className="text-xs text-slate-400 w-16">创建:</span>
+                  <span className="text-sm text-slate-600">
                     {user?.created_at ? new Date(user.created_at).toLocaleString('zh-CN') : '-'}
                   </span>
                 </div>
@@ -183,17 +183,17 @@ export const ProfileModal: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex gap-3 p-6 border-t border-stone-100">
+        <div className="flex gap-3 p-6 border-t border-slate-100">
           <button
             onClick={handleClose}
-            className="flex-1 h-12 rounded-xl border border-stone-200 text-chocolate-500 font-medium hover:bg-white transition-colors"
+            className="flex-1 h-12 rounded-xl border border-slate-200 text-slate-500 font-medium hover:bg-white transition-colors"
           >
             取消
           </button>
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="flex-1 h-12 rounded-xl bg-gradient-to-r from-strawberry-400 to-strawberry-500 text-white font-medium hover:from-strawberry-500 hover:to-strawberry-600 transition-all disabled:opacity-50 shadow-md hover-lift"
+            className="flex-1 h-12 rounded-xl bg-gradient-to-r from-pink-400 to-pink-500 text-white font-medium hover:from-pink-500 hover:to-pink-600 transition-all disabled:opacity-50 shadow-md hover-lift"
           >
             {isSaving ? '保存中...' : '保存更改'}
           </button>

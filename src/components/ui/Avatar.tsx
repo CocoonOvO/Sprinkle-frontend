@@ -18,37 +18,37 @@ const sizeStyles = {
 };
 
 const gradientMap: Record<string, string> = {
-  A: 'from-strawberry-400 to-stone-400',
-  B: 'from-stone-400 to-strawberry-500',
-  C: 'from-strawberry-500 to-stone-400',
-  D: 'from-stone-400 to-strawberry-400',
-  E: 'from-strawberry-400 to-stone-500',
-  F: 'from-stone-400 to-strawberry-400',
-  G: 'from-strawberry-400 to-stone-400',
-  H: 'from-stone-400 to-strawberry-500',
-  I: 'from-strawberry-500 to-stone-400',
-  J: 'from-stone-400 to-strawberry-400',
-  K: 'from-strawberry-400 to-stone-500',
-  L: 'from-stone-400 to-strawberry-400',
-  M: 'from-strawberry-400 to-stone-400',
-  N: 'from-stone-400 to-strawberry-500',
-  O: 'from-strawberry-500 to-stone-400',
-  P: 'from-stone-400 to-strawberry-400',
-  Q: 'from-strawberry-400 to-stone-500',
-  R: 'from-stone-400 to-strawberry-400',
-  S: 'from-strawberry-400 to-stone-400',
-  T: 'from-stone-400 to-strawberry-500',
-  U: 'from-strawberry-500 to-stone-400',
-  V: 'from-stone-400 to-strawberry-400',
-  W: 'from-strawberry-400 to-stone-500',
-  X: 'from-stone-400 to-strawberry-400',
-  Y: 'from-strawberry-400 to-stone-400',
-  Z: 'from-stone-400 to-strawberry-500',
+  A: 'from-pink-400 to-slate-400',
+  B: 'from-slate-400 to-pink-500',
+  C: 'from-pink-500 to-slate-400',
+  D: 'from-slate-400 to-pink-400',
+  E: 'from-pink-400 to-slate-500',
+  F: 'from-slate-400 to-pink-400',
+  G: 'from-pink-400 to-slate-400',
+  H: 'from-slate-400 to-pink-500',
+  I: 'from-pink-500 to-slate-400',
+  J: 'from-slate-400 to-pink-400',
+  K: 'from-pink-400 to-slate-500',
+  L: 'from-slate-400 to-pink-400',
+  M: 'from-pink-400 to-slate-400',
+  N: 'from-slate-400 to-pink-500',
+  O: 'from-pink-500 to-slate-400',
+  P: 'from-slate-400 to-pink-400',
+  Q: 'from-pink-400 to-slate-500',
+  R: 'from-slate-400 to-pink-400',
+  S: 'from-pink-400 to-slate-400',
+  T: 'from-slate-400 to-pink-500',
+  U: 'from-pink-500 to-slate-400',
+  V: 'from-slate-400 to-pink-400',
+  W: 'from-pink-400 to-slate-500',
+  X: 'from-slate-400 to-pink-400',
+  Y: 'from-pink-400 to-slate-400',
+  Z: 'from-slate-400 to-pink-500',
 };
 
 function getGradient(name: string): string {
   const firstLetter = name[0]?.toUpperCase() || 'A';
-  return gradientMap[firstLetter] || 'from-strawberry-400 to-stone-400';
+  return gradientMap[firstLetter] || 'from-pink-400 to-slate-400';
 }
 
 function getInitials(name: string): string {

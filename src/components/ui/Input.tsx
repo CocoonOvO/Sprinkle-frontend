@@ -24,19 +24,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="relative w-full">
         {inputPrefix && (
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-strawberry-400">{inputPrefix}</span>
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-pink-400">{inputPrefix}</span>
         )}
         <input
           ref={ref}
           disabled={disabled}
           type={inputType}
           className={cn(
-            'w-full rounded-xl border-2 border-strawberry-100 bg-white text-chocolate-600',
-            'placeholder:text-chocolate-300',
+            'w-full rounded-xl border-2 border-pink-100 bg-white text-slate-600',
+            'placeholder:text-slate-300',
             'transition-all duration-200',
-            'hover:border-strawberry-200',
-            'focus:outline-none focus:border-strawberry-400 focus:shadow-[0_0_0_3px_rgba(236,72,153,0.1)]',
-            'disabled:bg-strawberry-50 disabled:cursor-not-allowed disabled:opacity-60',
+            'hover:border-pink-200',
+            'focus:outline-none focus:border-pink-400 focus:shadow-[0_0_0_3px_rgba(236,72,153,0.1)]',
+            'disabled:bg-pink-50 disabled:cursor-not-allowed disabled:opacity-60',
             error && 'border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]',
             inputPrefix && 'pl-10',
             (inputSuffix || isPassword) && 'pr-10',
@@ -49,13 +49,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-chocolate-300 hover:text-strawberry-400 transition-colors duration-150"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 hover:text-pink-400 transition-colors duration-150"
           >
             {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
           </button>
         )}
         {inputSuffix && !isPassword && (
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-strawberry-300">{inputSuffix}</span>
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-pink-300">{inputSuffix}</span>
         )}
         {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
       </div>

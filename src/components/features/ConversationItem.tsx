@@ -45,15 +45,15 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
       onClick={onClick}
       className={cn(
         'w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 text-left',
-        'hover:bg-strawberry-50/70 hover:shadow-md hover:-translate-y-0.5',
-        isActive && 'bg-gradient-to-r from-strawberry-50 to-white shadow-md border-l-2 border-strawberry-400'
+        'hover:bg-pink-50/70 hover:shadow-md hover:-translate-y-0.5',
+        isActive && 'bg-gradient-to-r from-pink-50 to-white shadow-md border-l-2 border-pink-400'
       )}
     >
       <div
         className={cn(
           'flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center',
           'transition-all duration-200',
-          isGroup ? 'bg-gradient-to-br from-vanilla-200 to-vanilla-100 text-vanilla-600' : 'bg-gradient-to-br from-strawberry-100 to-strawberry-50 text-strawberry-500',
+          isGroup ? 'bg-gradient-to-br from-blue-200 to-blue-100 text-blue-600' : 'bg-gradient-to-br from-pink-100 to-pink-50 text-pink-500',
           isActive ? 'shadow-md' : ''
         )}
       >
@@ -63,7 +63,7 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
       <div className="flex-1 min-w-0">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className={cn('font-medium text-sm truncate transition-colors duration-150', isActive ? 'text-strawberry-600' : 'text-chocolate-600')}>
+            <span className={cn('font-medium text-sm truncate transition-colors duration-150', isActive ? 'text-pink-600' : 'text-slate-600')}>
               {displayName}
             </span>
             {isAgent && (
@@ -74,12 +74,12 @@ export const ConversationItem: React.FC<ConversationItemProps> = ({
             )}
           </div>
           {lastMessageTime && (
-            <span className="flex-shrink-0 text-xs text-chocolate-300">{formatTime(lastMessageTime)}</span>
+            <span className="flex-shrink-0 text-xs text-slate-300">{formatTime(lastMessageTime)}</span>
           )}
         </div>
 
         <div className="flex items-center justify-between gap-2 mt-0.5">
-          <p className="text-xs text-chocolate-400 truncate">{lastMessage || '暂无消息'}</p>
+          <p className="text-xs text-slate-400 truncate">{lastMessage || '暂无消息'}</p>
           {unreadCount > 0 && <Badge count={unreadCount} variant="primary" />}
         </div>
       </div>

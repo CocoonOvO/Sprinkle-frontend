@@ -72,7 +72,7 @@ export const SettingsPanel: React.FC = () => {
 
       <div className="space-y-4">
         <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
-          <Info className="w-4 h-4 text-strawberry-500" />
+          <Info className="w-4 h-4 text-pink-500" />
           关于我们
         </div>
         <div className="p-4 bg-gradient-to-r from-stone-50 via-slate-50 to-stone-50 rounded-xl">

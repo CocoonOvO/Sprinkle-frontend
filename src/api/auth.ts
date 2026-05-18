@@ -65,6 +65,13 @@ export const authApi = {
   },
 };
 
+export interface UserListResponse {
+  items: UserResponse[];
+  total: number;
+  limit: number;
+  offset: number;
+}
+
 export const userApi = {
   getMe: async (): Promise<UserResponse> => {
     return apiClient.get<UserResponse>('/users/me');
@@ -72,6 +79,10 @@ export const userApi = {
 
   getUser: async (userId: string): Promise<UserResponse> => {
     return apiClient.get<UserResponse>(`/users/${userId}`);
+  },
+
+  listUsers: async (params?: { search?: string; user_type?: string; limit?: number; offset?: number }): Promise<UserListResponse> => {
+    return apiClient.get<UserListResponse>('/users', params);
   },
 
   updateMe: async (data: { display_name?: string; metadata?: Record<string, unknown> }): Promise<UserResponse> => {

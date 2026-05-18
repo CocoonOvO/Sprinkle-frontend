@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Users, User, Check } from 'lucide-react';
 import { cn } from '../ui';
 import { Avatar } from '../ui/Avatar';
 import { useConversationStore, useAuthStore } from '../../stores';
-
-const TEST_USERS = [
-  { id: '5de1ebb6-3a52-4a03-b8f5-6c031763b595', username: 'user3', display_name: '用户三' },
-  { id: '7b103ea0-b79e-4663-b17e-44d5d5a9878c', username: 'user1', display_name: '用户一' },
-  { id: 'cc0be9f3-4809-46ca-8c8e-51a2ef18ba00', username: 'user2', display_name: '用户二' },
-];
+import { userApi, type UserResponse } from '../../api/auth';
 
 interface NewConversationModalProps {
   onClose: () => void;
@@ -20,7 +15,23 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
   const [conversationType, setConversationType] = useState<'direct' | 'group'>('group');
   const [name, setName] = useState('');
   const [isCreating, setIsCreating] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [selectedUser, setSelectedUser] = useState<UserResponse | null>(null);
+  const [users, setUsers] = useState<UserResponse[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await userApi.listUsers({ limit: 100 });
+        setUsers(response.items);
+      } catch (err) {
+        console.error('Failed to fetch users:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchUsers();
+  }, []);
 
   const handleCreate = async () => {
     if (conversationType === 'group' && !name.trim()) return;
@@ -31,7 +42,7 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
       await createConversation({
         type: conversationType,
         name: conversationType === 'group' ? name.trim() : undefined,
-        member_ids: conversationType === 'direct' ? [selectedUser.id] : [],
+        member_ids: conversationType === 'direct' ? [selectedUser!.id] : [],
       });
       onClose();
     } catch (err) {
@@ -41,7 +52,7 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
     }
   };
 
-  const otherUsers = TEST_USERS.filter(u => u.id !== currentUser?.id);
+  const otherUsers = users.filter(u => u.id !== currentUser?.id);
 
   return (
     <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-100 via-pink-50/30 to-slate-100 p-4">
@@ -105,25 +116,31 @@ export const NewConversationModal: React.FC<NewConversationModalProps> = ({ onCl
             <div className="space-y-3">
               <label className="text-sm font-medium text-slate-600">选择用户</label>
               <div className="max-h-48 overflow-y-auto border border-slate-200 rounded-xl">
-                {otherUsers.map(user => (
-                  <button
-                    key={user.id}
-                    onClick={() => setSelectedUser(user)}
-                    className={cn(
-                      'w-full flex items-center gap-3 px-3 py-2 hover:bg-pink-50 transition-colors',
-                      selectedUser?.id === user.id && 'bg-pink-50'
-                    )}
-                  >
-                    <Avatar name={user.display_name} size="sm" />
-                    <div className="flex-1 text-left">
-                      <p className="text-sm font-medium text-slate-700">{user.display_name}</p>
-                      <p className="text-xs text-slate-400">@{user.username}</p>
-                    </div>
-                    {selectedUser?.id === user.id && (
-                      <Check className="w-4 h-4 text-pink-500" />
-                    )}
-                  </button>
-                ))}
+                {loading ? (
+                  <div className="p-4 text-center text-slate-400">加载中...</div>
+                ) : otherUsers.length === 0 ? (
+                  <div className="p-4 text-center text-slate-400">暂无其他用户</div>
+                ) : (
+                  otherUsers.map(user => (
+                    <button
+                      key={user.id}
+                      onClick={() => setSelectedUser(user)}
+                      className={cn(
+                        'w-full flex items-center gap-3 px-3 py-2 hover:bg-pink-50 transition-colors',
+                        selectedUser?.id === user.id && 'bg-pink-50'
+                      )}
+                    >
+                      <Avatar name={user.display_name} size="sm" />
+                      <div className="flex-1 text-left">
+                        <p className="text-sm font-medium text-slate-700">{user.display_name}</p>
+                        <p className="text-xs text-slate-400">@{user.username}</p>
+                      </div>
+                      {selectedUser?.id === user.id && (
+                        <Check className="w-4 h-4 text-pink-500" />
+                      )}
+                    </button>
+                  ))
+                )}
               </div>
             </div>
           )}
